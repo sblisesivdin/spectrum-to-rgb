@@ -11,7 +11,7 @@ Python-based tool for converting spectral power distributions (SPDs) to RGB colo
 
 MIT License
 
-Copyright (c) 2025 by Beyza Lisesivdin and Sefer Bora Lisesivdin
+Copyright (c) 2025-2026 by Beyza Lisesivdin and Sefer Bora Lisesivdin
 
 Full license information can be found in LICENSE.md
 
@@ -208,3 +208,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
