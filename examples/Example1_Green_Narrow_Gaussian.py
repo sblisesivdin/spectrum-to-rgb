@@ -2,11 +2,11 @@ import numpy as np
 import pandas as pd
 
 """
-Example 2 - Green Narrow Gaussian Peak
+Example 1 - Green Narrow Gaussian Peak
 
 MIT License
 
-Copyright (c) 2025 by Beyza Lisesivdin and Sefer Bora Lisesivdin
+Copyright (c) 2025-2026 by Beyza Lisesivdin and Sefer Bora Lisesivdin
 
 Full license information can be found in LICENSE.md
 

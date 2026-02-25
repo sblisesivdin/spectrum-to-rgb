@@ -6,7 +6,7 @@ Example 2 - Two Narrow Gaussian Peaks
 
 MIT License
 
-Copyright (c) 2025 by Beyza Lisesivdin and Sefer Bora Lisesivdin
+Copyright (c) 2025-2026 by Beyza Lisesivdin and Sefer Bora Lisesivdin
 
 Full license information can be found in LICENSE.md
 
