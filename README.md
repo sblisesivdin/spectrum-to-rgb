@@ -54,5 +54,10 @@ The script outputs the computed RGB value and optionally displays a chromaticity
 - **CIE_xyz_1931_2deg.csv**: Contains the CIE 1931 color-matching functions.
 - **examples/**: Folder with Python script that produces example data in the related article.
 
+## Cite
+You can use the following citation in your studies:
+
+**B. Sarikavak-Lisesivdin, S. B. Lisesivdin "A computational framework for rendering sRGB color from physical light spectra" J. Optoelectr. Adv. Mater. 28, 251 (2026).**
+
 ## License
 This project is licensed under the [MIT License](https://github.com/sblisesivdin/spectrum-to-rgb/blob/main/LICENSE). You are free to modify and distribute it as described by the license terms.
