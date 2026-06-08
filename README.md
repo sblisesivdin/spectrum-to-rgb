@@ -1,6 +1,6 @@
 # spectrum-to-color
 
-`spectrum-to-color` is a Python-based tool for converting spectral power distributions (SPDs) to RGB colors using the CIE 1931 color space. This repository accompanies the article titled _A Python-Based Approach for Converting Spectral Power Distributions to RGB Colors Using the CIE 1931 Color Space_ (in press).
+`spectrum-to-color` is a Python-based tool for converting spectral power distributions (SPDs) to RGB colors using the CIE 1931 color space. This repository accompanies the article titled _A computational framework for rendering sRGB color from physical light spectra_, which is published at J. Optoelectr. Adv. Mater. 28, 251 (2026). (look below for citation).
 
 The script leverages widely available libraries (`numpy`, `pandas`, `matplotlib`, and `scipy`) to:
 
