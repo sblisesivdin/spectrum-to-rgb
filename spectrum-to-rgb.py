@@ -20,21 +20,31 @@ $ ./spectrum-to-rgb.py <filename>
 
 """
 
-def load_csv(file_path):
+def load_csv(file_path, *, header=None):
     """
-    Load a CSV file with automatic delimiter detection.
-    Returns a numpy array of the data.
+    Load a numeric file with automatic delimiter detection.
+    If provided, header contains the column names of an optional first line.
     """
+    delimiters = ",\t "
     with open(file_path, 'r') as file:
-        # Detect delimiter
+        if header is not None:
+            expected_header = tuple(name.casefold() for name in header)
+            first_line = file.readline().lstrip('\ufeff').strip()
+            # Split from the right because "Wavelength (nm)" contains a space.
+            if not any(
+                tuple(field.strip().strip('"').casefold() for field in first_line.rsplit(separator, 1))
+                == expected_header
+                for separator in delimiters
+            ):
+                file.seek(0)
+
+        data_start = file.tell()
         sample = file.read(1024)
-        file.seek(0)
-        dialect = csv.Sniffer().sniff(sample, delimiters=",\t ")
+        file.seek(data_start)
+        dialect = csv.Sniffer().sniff(sample, delimiters=delimiters)
         delimiter = dialect.delimiter
         print(f"Detected delimiter in {file_path}: '{delimiter}'")
-
-    # Load data
-    return np.genfromtxt(file_path, delimiter=delimiter)
+        return np.genfromtxt(file, delimiter=delimiter)
 
 def load_spectrum(csv_file):
     """
@@ -42,7 +52,7 @@ def load_spectrum(csv_file):
     The first column should be wavelength in nm,
     and the second column should be intensity.
     """
-    data = load_csv(csv_file)
+    data = load_csv(csv_file, header=("Wavelength (nm)", "Intensity"))
     if data.ndim != 2 or data.shape[1] != 2:
         raise ValueError(f"Invalid spectrum file format: {csv_file}. Expected two columns.")
     return data[:, 0], data[:, 1]

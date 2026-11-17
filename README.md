@@ -41,16 +41,19 @@ Place your spectral data in a CSV file with two columns:
 Column 1: Wavelengths (in nanometers)
 Column 2: Intensities (in arbitrary units)
 
+The first line may contain the column names `Wavelength (nm),Intensity` used by
+the example generators. Files without a header are also supported.
+
 Run the main script:
 
 ```bash
-   python spectrum_to_rgb.py input spectrum.csv
+   python spectrum-to-rgb.py spectrum.csv
 ```
 
 The script outputs the computed RGB value and optionally displays a chromaticity diagram.
 
 ## Project Structure
-- **spectrum_to_rgb.py**: Main Python script.
+- **spectrum-to-rgb.py**: Main Python script.
 - **CIE_xyz_1931_2deg.csv**: Contains the CIE 1931 color-matching functions.
 - **examples/**: Folder with Python script that produces example data in the related article.
 
